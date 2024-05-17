@@ -3,7 +3,6 @@ import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { API_URL } from "../../utils/apiConfig";
 import "./Chat.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -90,7 +89,7 @@ const Chat = () => {
       { role: "user", content: inputValue },
     ]);
     try {
-      const response = await axios.post(`"${API_URL}/api/get-response"`, {
+      const response = await axios.post("/api/get-response", {
         question: inputValue,
       });
 
